@@ -1,13 +1,14 @@
-import { FileReader } from "./FileReader";
 import { FileData } from "./FileData";
+import { ConsoleReport } from "./report/ConsoleReport";
 
 
 
 
-const fileData = new FileData(new FileReader("emp2.csv"));
+const fileData = FileData.readAndLoad("emp2.csv");
 
 
 (async () => {
   await fileData.load()
-  console.log(fileData.output)
+  new ConsoleReport().print(fileData.output)
+
 })()

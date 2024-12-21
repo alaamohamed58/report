@@ -1,3 +1,4 @@
+import { FileReader } from "./FileReader";
 import { MatchData } from "./MatchData";
 
 
@@ -8,6 +9,10 @@ interface Data {
 
 
 export class FileData {
+  static readAndLoad(filename: string): FileData {
+    return new FileData(new FileReader(filename));
+
+  }
   output: MatchData[] = []
   constructor(public dataReader: Data) { };
 
