@@ -1,0 +1,1 @@
+export type MatchData = [string, number, number, string, string]
